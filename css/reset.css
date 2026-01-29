@@ -1,0 +1,85 @@
+/* =========================
+   RESET GLOBAL
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* =========================
+   RESET DE MÍDIAS
+========================= */
+
+
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =========================
+   RESET DE FORMULÁRIOS
+========================= */
+fieldset {
+  border: 0;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  width: 100%;
+  background: #2f2f2f;
+  border: 1px solid #3a3a3a;
+  color: #ffffff;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #DAA520; /* dourado */
+}
+
+input.btn {
+  width: auto;
+  cursor: pointer;
+}
+
+/* =========================
+   CONTAINER BASE
+========================= */
+.container {
+  float: left;
+  width: 100%;
+  background-color: #121212; /* preto principal */
+}
+
+.clear {
+  clear: both;
+}
+
+.fontzero {
+  font-size: 0;
+}
+
+/* =========================
+   TÍTULOS DE SEÇÃO
+========================= */
+.section_title {
+  font-size: 1.8em;
+  text-align: center;
+  color: #DAA520; /* dourado */
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}

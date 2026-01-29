@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+ <head>
+	
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="AgendaBronx" content="Agendamento Bronx Barber" />
+   
+    <meta name="keywords" content="barber"/>
+    <meta name="author" content="JOLA" />
+    
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta name="robots" content="index, follow"/>
+    
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+    <![endif]-->       
+
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/fonts-icones.css">
+  
+	<title>Agendamento Bronx Barber</title>
+
+ </head>
+ <script>
+function enviarWhatsApp(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById("nome").value;
+    const servico = document.getElementById("servico").value;
+    const data = document.getElementById("data").value;
+    const horario = document.getElementById("horario").value;
+
+    const numeroWhatsApp = "559196254400"; // +55 91 9625-4400
+
+    const mensagem =
+        "coe! Queria agendar um horário na *Bronx Barber* ✂️%0A%0A" +
+        "*Nome:* " + nome + "%0A" +
+        "*Serviço:* " + servico + "%0A" +
+        "*Dia:* " + data + "%0A" +
+        "*Horário:*" + horario;
+
+    const link = "https://wa.me/" + numeroWhatsApp + "?text=" + mensagem;
+
+    window.open(link, "_blank");
+}
+</script>
+
+
+
+<body>
+    
+<header class="header container">        
+    
+    <div class="content">
+        
+        <div class="header-left">
+           
+            <div class="header_logo">
+            
+                <a href="" target="_blank">
+                    <img src="img/logo/logo.png" alt="Landingpage Online" title="Landingpage Online - Loop Nerd"/>
+                </a>
+
+            </div>
+
+           <h1 class="title">
+    <span>Agendamento</span> na<br> Bronx Barber
+</h1>
+
+<p class="texto">
+    Preencha seus dados ao lado<br>
+    e agende seu corte em poucos segundos.
+</p>
+
+<p class="texto">
+    Atendimento rápido, estilo garantido e visual no ponto certo.
+</p>
+
+        
+        </div><!--left-->
+        
+        <div class="header-right">
+            
+            <h2 class="title">Assim que enviar, o mano Bronx confirma seu horário pelo WhatsApp.
+</h2>     
+            
+            <form class="header-newsletter" onsubmit="enviarWhatsApp(event)">
+
+    <input class="campo" id="nome" name="nome" placeholder="Nome" required autocomplete="off">
+
+    <!-- Serviço selecionado (oculto) -->
+<input type="hidden" id="servico" name="servico" required>
+
+<!-- Botão fake -->
+<div class="campo campo-select" onclick="abrirServicos()">
+    Selecionar serviço
+</div>
+
+<!-- Modal de serviços -->
+<div class="modal-servicos" id="modalServicos">
+    <div class="modal-conteudo">
+
+        <h3>Escolha seu serviço</h3>
+
+        <div class="cards-servicos">
+
+            <div class="card-servico" onclick="selecionarServico('Barba na Navalha - R$10')">
+                <strong>Barba na Navalha</strong>
+                <span>R$ 10</span>
+            </div>
+
+            <div class="card-servico" onclick="selecionarServico('Corte + Sobrancelha - R$25')">
+                <strong>Corte + Sobrancelha</strong>
+                <span>R$ 25</span>
+            </div>
+
+            <div class="card-servico" onclick="selecionarServico('Corte na Tesoura - R$30')">
+                <strong>Corte na Tesoura</strong>
+                <span>R$ 30</span>
+            </div>
+
+            <div class="card-servico" onclick="selecionarServico('Barba + Cabelo - R$30')">
+                <strong>Barba + Cabelo</strong>
+                <span>R$ 30</span>
+            </div>
+
+            <div class="card-servico" onclick="selecionarServico('Cavanhaque - R$5')">
+                <strong>Cavanhaque</strong>
+                <span>R$ 5</span>
+            </div>
+
+            <div class="card-servico destaque" onclick="selecionarServico('Luzes + Corte - R$80')">
+                <strong>Luzes + Corte</strong>
+                <span>R$ 80</span>
+            </div>
+
+            <div class="card-servico destaque" onclick="selecionarServico('Platinado + Corte - R$100')">
+                <strong>Platinado + Corte</strong>
+                <span>R$ 100</span>
+            </div>
+
+        </div>
+
+        <button class="btn-fechar" onclick="fecharServicos()">Fechar</button>
+    </div>
+</div>
+
+
+    <input class="campo" id="data" name="data" type="date" required>
+
+    <input class="campo" id="horario" name="horario" type="time" required>
+
+    <button class="btn" type="submit">Agendar Corte</button>
+
+</form>
+
+
+</form>
+
+
+        </div><!--right-->
+
+    
+    </div>
+
+</header>
+
+<main class="main_content container">
+
+    <section class="section-servicos container">
+        
+        <div class="content">
+            
+            <h2 class="title">Nossos Serviços</h2>
+            <p class="descricao">Como podemos lhe ajudar?</p>
+
+            <div class="row">
+                            
+                <article class="servicos">
+    <span class="icone"><i class="icon icon-scissors"></i></span>
+    <p><strong>Barba na Navalha</strong><br>R$ 10</p>
+</article>
+
+<article class="servicos">
+    <span class="icone"><i class="icon icon-scissors"></i></span>
+    <p><strong>Corte + Sobrancelha</strong><br>R$ 25</p>
+</article>
+
+<article class="servicos">
+    <span class="icone"><i class="icon icon-scissors"></i></span>
+    <p><strong>Corte na Tesoura</strong><br>R$ 30</p>
+</article>
+
+<article class="servicos">
+    <span class="icone"><i class="icon icon-scissors"></i></span>
+    <p><strong>Barba + Cabelo</strong><br>R$ 30</p>
+</article>
+
+<article class="servicos">
+    <span class="icone"><i class="icon icon-scissors"></i></span>
+    <p><strong>Cavanhaque</strong><br>R$ 5</p>
+</article>
+
+<article class="servicos">
+    <span class="icone"><i class="icon icon-scissors"></i></span>
+    <p><strong>Luzes + Corte</strong><br>R$ 80</p>
+</article>
+
+<article class="servicos">
+    <span class="icone"><i class="icon icon-scissors"></i></span>
+    <p><strong>Platinado + Corte</strong><br>R$ 100</p>
+</article>
+
+
+           </div><!--row-->
+
+
+        <div class="clear"></div>
+        </div>
+    
+    </section><!--Serviços-->
+
+    <section class="section-sobre container">
+        
+        <div class="content">
+                        
+            <div class="row">
+                
+                <div class="col-left-sobre">
+                    <img src="img/sections/bronx.png" alt="barber" title="logo"> 
+                </div>
+
+                <div class="col-right-sobre"> 
+                   
+                   <h2 class="title">Somos especialistas em <b>cortes masculinos e barba na navalha</b></h2>
+<p>
+Na Bronx Barber, a gente leva a sério a qualidade do atendimento e cada detalhe do seu visual.
+</p>
+<p>
+Aqui o foco é estilo, precisão e atitude — tudo pra você sair com o corte alinhado e a confiança lá em cima.
+</p>
+
+
+                </div> 
+
+            </div><!--row-->
+
+
+        <div class="clear"></div>
+        </div>
+    
+    </section><!--Sobre-->
+
+</main>
+
+<footer class="footer container">
+    
+    <div class="content">
+
+        <div class="row-footer">
+            
+            <div class="footer-info">
+            
+                <div class="info">
+                  
+                  <span>Endereço</span>  
+                  <p>Av. Texas - Sala 1.000 - Ed. Gonden Gate.</p>
+                  <p>Bairro: Alphaville - Santana de Parnaíba-SP.</p>
+                  <p>CEP 000-00000</p>
+                
+                </div>
+                
+                <div class="info">
+                
+                  <span>Telefones</span>  
+                  <p><i class="icon icon-phone"></i> (21) 90000-0000</p>
+                  <p><i class="icon icon-whatsapp-1"></i> (21) 90000-0000</p>
+                
+                </div>
+                
+                <div class="info">
+
+                  <span>Horário de Atendimento</span>
+                  <p>Segunda a sexta das 09h às 19h.</p>
+                  <p>Sábados das 08h às 13h</p>
+                
+                </div>
+            
+            </div><!--Footer-info-->
+
+        </div><!--Row Footer-->        
+
+        <div class="clear"></div>
+    
+    </div><!--Content-->
+      
+    <div class="copyright">
+      
+      <div class="content">
+                
+          <div class="col">
+            <div class="copy-text">
+              <p>Copyright &copy; Seu Site - Todos os Direitos Reservados.</p>
+            </div>
+          </div>
+              
+      </div><!--content-->
+
+    </div><!--copyright-->    
+
+</footer>
+
+</body>
+</html>
+<script>
+function abrirServicos() {
+    document.getElementById("modalServicos").style.display = "flex";
+}
+
+function fecharServicos() {
+    document.getElementById("modalServicos").style.display = "none";
+}
+
+function selecionarServico(servico) {
+    document.getElementById("servico").value = servico;
+    document.querySelector(".campo-select").innerText = servico;
+    fecharServicos();
+}
+</script>
